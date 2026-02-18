@@ -16,6 +16,14 @@ Assignment focusing on:
 
 ------------------------------------------------------------------------
 
+## 🚀 Smart AI Blog Editor in Action
+
+<p align="center">
+   <img src="https://github.com/Saniya2229/Quillzy-Blog-Editor/edit/main/smart.gif" width="900"/>
+</p>
+
+> Notion-style editor with AI integration and intelligent auto-save.
+
 # 🌍 Live Demo
 
 > Replace these links with your real deployed URLs
@@ -147,10 +155,23 @@ MongoDB allows storing this JSON directly without transformation.
 
 ## Post Schema
 
-{ \_id: ObjectId, content: JSON, // Lexical state plain_text: String, //
-Extracted for search & AI title: String, word_count: Number, status:
-"draft" \| "published", user_email: String, created_at: Date,
-updated_at: Date, published_at: Date }
+{
+  "_id": "ObjectId",
+  "content": { ... },
+  "plain_text": "String",
+  "metadata": {
+    "title": "String",
+    "word_count": 0,
+    "status": "draft"
+  },
+  "timestamps": {
+    "created_at": "Date",
+    "updated_at": "Date",
+    "published_at": "Date"
+  },
+  "user_email": "String"
+}
+
 
 ## Why Store Both JSON and Plain Text?
 
@@ -289,17 +310,29 @@ Stored Lexical JSON + metadata.
 
 # 📡 API Endpoints
 
-POST /api/auth/signup\
-POST /api/auth/login\
-GET /api/auth/me
+🔐 Authentication APIs
 
-POST /api/posts/\
-PATCH /api/posts/{id}\
-POST /api/posts/{id}/publish\
-GET /api/posts/
+| Method | Endpoint           | Description                            |
+| ------ | ------------------ | -------------------------------------- |
+| `POST` | `/api/auth/signup` | Register a new user                    |
+| `POST` | `/api/auth/login`  | Authenticate user and return JWT token |
+| `GET`  | `/api/auth/me`     | Get current authenticated user details |
 
-POST /api/ai/generate\
-POST /api/ai/fix-grammar
+📝 Post Management APIs
+
+| Method  | Endpoint                  | Description                               |
+| ------- | ------------------------- | ----------------------------------------- |
+| `POST`  | `/api/posts/`             | Create a new draft                        |
+| `PATCH` | `/api/posts/{id}`         | Update draft content (Auto-save endpoint) |
+| `POST`  | `/api/posts/{id}/publish` | Publish a draft                           |
+| `GET`   | `/api/posts/`             | Fetch all user drafts & posts             |
+
+🤖 AI Integration APIs
+
+| Method | Endpoint              | Description                    |
+| ------ | --------------------- | ------------------------------ |
+| `POST` | `/api/ai/generate`    | Generate AI summary of content |
+| `POST` | `/api/ai/fix-grammar` | Improve grammar using AI       |
 
 ------------------------------------------------------------------------
 
