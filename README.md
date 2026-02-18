@@ -19,7 +19,7 @@ Assignment focusing on:
 ## 🚀 Smart AI Blog Editor in Action
 
 <p align="center">
-   <img src="https://github.com/Saniya2229/Quillzy-Blog-Editor/edit/main/smart.gif" width="900"/>
+   <img src="https://github.com/Saniya2229/Quillzy-Blog-Editor/blob/main/smart.gif" width="900"/>
 </p>
 
 > Notion-style editor with AI integration and intelligent auto-save.
