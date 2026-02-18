@@ -167,17 +167,20 @@ This ensures scalability and clean system design.
 
 # 📁 Project Structure
 
+## 📁 Project Structure
+
+```bash
 smart-editor/
 │
 ├── backend/
-│   ├── main.py                 # FastAPI entry point
-│   ├── database.py             # MongoDB connection setup
+│   ├── main.py                  # FastAPI entry point
+│   ├── database.py              # MongoDB connection
 │   ├── routes/
-│   │   ├── auth.py             # Authentication endpoints (JWT)
-│   │   ├── posts.py            # Create, update, publish posts
-│   │   ├── drafts.py           # Draft management
-│   │   └── ai.py               # AI summary & grammar endpoints
-│   └── test_api_flow.py        # Backend API testing script
+│   │   ├── auth.py              # JWT authentication endpoints
+│   │   ├── posts.py             # Create, update, publish posts
+│   │   ├── drafts.py            # Draft management
+│   │   └── ai.py                # AI summary & grammar endpoints
+│   └── test_api_flow.py         # Backend API test script
 │
 ├── src/
 │   ├── components/
@@ -189,17 +192,17 @@ smart-editor/
 │   │   │   ├── PreviewLayouts.jsx
 │   │   │   ├── ToolbarPlugin.jsx
 │   │   │   └── MenuBar.jsx
-│   │   └── ui/                 # Reusable UI components
+│   │   └── ui/                  # Reusable UI components
 │   │
 │   ├── store/
 │   │   ├── useAuthStore.js
 │   │   └── useEditorStore.js
 │   │
 │   ├── hooks/
-│   │   └── useDebounce.js      # Custom debounce hook (Auto-save logic)
+│   │   └── useDebounce.js       # Custom debounce hook (Auto-save)
 │   │
 │   ├── services/
-│   │   └── api.js              # Axios instance with JWT interceptor
+│   │   └── api.js               # Axios instance (JWT interceptor)
 │   │
 │   ├── App.jsx
 │   ├── main.jsx
@@ -211,6 +214,7 @@ smart-editor/
 ├── package.json
 ├── tailwind.config.js
 └── vite.config.js
+```
 
 
 ------------------------------------------------------------------------
